@@ -41,7 +41,7 @@ class ArticlePage extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.5,
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("images/staysafe.jpg"),
+                image: new AssetImage("assets/staysafe.jpg"),
                 fit: BoxFit.cover,
               ),
             )),

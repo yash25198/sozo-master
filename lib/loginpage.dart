@@ -87,6 +87,7 @@ String validator(String svalue){
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       resizeToAvoidBottomInset: true,
         body: SafeArea(
       child:
@@ -97,73 +98,46 @@ String validator(String svalue){
 
                  Center(
                    child: SingleChildScrollView(
-                      child: Column(
+                      child: Container(
 
-                          children: [
+                        child: Column(
+
+                            children: [
 
 
-                            SizedBox(
-                              height: 0,
-                            ),
-                            Container(
-                              height: 250.0,
-                              width: 250.0,
-                              padding: EdgeInsets.only(top: 5),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(200),
-                              ),
-                              child: Center(
-                                child: Image(
-                                    image:AssetImage ('assets/sos.png'),
-                                  height: 240,
-                                  width : 240,
+
+                              SizedBox(
+                                child: Text("SOZO",
+                                  style: TextStyle(fontWeight: FontWeight.bold,color: Colors.redAccent, fontSize: 65,),
                                 ),
-
                               ),
-                            ),
-                          Container(
-                              margin: EdgeInsets.all(20),
-                              child: TextField(
-                                controller: nameController,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Phone Number',
+                              Container(
+                                height: 250.0,
+                                width: 250.0,
+                                padding: EdgeInsets.only(top: 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(200),
                                 ),
-                                onChanged: (text) {
-                                  setState(() {
-                                    _UserName = validator(text);
-                                    //print(UserName);
-                                    //you can access nameController in its scope to get
-                                    // the value of text entered as shown below
-                                    //UserName = nameController.text;
-                                  });
-                                },
-                                onSubmitted: (text){
-                                  _UserName = text;
-                          }
-                              )),
-                            Container(
-                                margin: EdgeInsets.fromLTRB(20,0,20,20),
-                                child: TextField(
-                                  controller: passController,
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    labelText: 'OTP',
+                                child: Center(
+                                  child: Image(
+                                      image:AssetImage ('assets/sos.png'),
+                                    height: 240,
+                                    width : 240,
                                   ),
 
-                                 /* TextFormField(
-                                    obscureText: true,
-                                    decoration: const InputDecoration(
-                                      labelText: 'Password',
-                                    ),*/
-
-
-
+                                ),
+                              ),
+                            Container(
+                                margin: EdgeInsets.all(20),
+                                child: TextField(
+                                  controller: nameController,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'EmailID',
+                                  ),
                                   onChanged: (text) {
                                     setState(() {
-                                      _Password = validator(text);
-
+                                      _UserName = validator(text);
                                       //print(UserName);
                                       //you can access nameController in its scope to get
                                       // the value of text entered as shown below
@@ -171,84 +145,117 @@ String validator(String svalue){
                                     });
                                   },
                                   onSubmitted: (text){
-                                    _Password = text;
-                                  },
+                                    _UserName = text;
+                            }
                                 )),
-
-                          Center(
-                              child:
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        height: 40,
-                                        width: 150,
-                                        decoration: BoxDecoration(
-                                            color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
-                                        child: FlatButton(
-                                          onPressed:(){
-                                            _loginUserWithMail();
-                                          },
-
-                                          child: Text(
-                                            'Login',
-                                            style: TextStyle(color: Colors.white, fontSize: 15),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        height: 40,
-                                        width: 150,
-                                        decoration: BoxDecoration(
-                                            color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
-                                        child: FlatButton(
-                                          onPressed:(){
-                                            _createUserWithMail();
-                                          },
-
-                                          child: Text(
-                                            'Sign Up',
-                                            style: TextStyle(color: Colors.white, fontSize: 15),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-
-
-                              ),
-                            Container(
-                              height: 20,
-                              width: 20,
-                              child: Center(child: Text("or")),
-                            ),
-                            Center(
-                              child:
                               Container(
-                                height: 40,
-                                width: 200,
-                                decoration: BoxDecoration(
-                                    color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
-                                child: FlatButton(
-                                  onPressed: _createUser,
+                                  margin: EdgeInsets.fromLTRB(20,0,20,20),
+                                  child: TextField(
+                                    controller: passController,
+                                    obscureText: true,
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: 'Password',
+                                    ),
 
-                                  child: Text(
-                                    'Login Anonymously',
-                                    style: TextStyle(color: Colors.white, fontSize: 15),
+                                   /* TextFormField(
+                                      obscureText: true,
+                                      decoration: const InputDecoration(
+                                        labelText: 'Password',
+                                      ),*/
+
+
+
+                                    onChanged: (text) {
+                                      setState(() {
+                                        _Password = validator(text);
+
+                                        //print(UserName);
+                                        //you can access nameController in its scope to get
+                                        // the value of text entered as shown below
+                                        //UserName = nameController.text;
+                                      });
+                                    },
+                                    onSubmitted: (text){
+                                      _Password = text;
+                                    },
+                                  )),
+
+                            Center(
+                                child:
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 40,
+                                          width: 150,
+                                          decoration: BoxDecoration(
+                                              color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
+                                          child: FlatButton(
+                                            onPressed:(){
+                                              _loginUserWithMail();
+                                            },
+
+                                            child: Text(
+                                              'Login',
+                                              style: TextStyle(color: Colors.white, fontSize: 15),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Container(
+                                          height: 40,
+                                          width: 150,
+                                          decoration: BoxDecoration(
+                                              color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
+                                          child: FlatButton(
+                                            onPressed:(){
+                                              _createUserWithMail();
+                                            },
+
+                                            child: Text(
+                                              'Sign Up',
+                                              style: TextStyle(color: Colors.white, fontSize: 15),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+
+
+                                ),
+                              Container(
+                                height: 20,
+                                width: 20,
+                                child: Center(child: Text("or")),
+                              ),
+                              Center(
+                                child:
+                                Container(
+                                  height: 40,
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                      color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
+                                  child: FlatButton(
+                                    onPressed: _createUser,
+
+                                    child: Text(
+                                      'Login Anonymously',
+                                      style: TextStyle(color: Colors.white, fontSize: 15),
+                                    ),
                                   ),
                                 ),
+
+
+
                               ),
 
-
-
-                            ),
-
-                        ],
+                          ],
                 ),
+                      ),
                     ),
                  ),
                   ),
