@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "991609903577",
+    "project_id": "sozo-6e2d4",
+    "storage_bucket": "sozo-6e2d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991609903577:android:6fbf1de6b31162bdbf61c8",
+        "android_client_info": {
+          "package_name": "com.example.sozonew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991609903577-i4b5btj6qs48o6dh9rhs7gu8ouvgclej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY0zgHd3MOSiAwNTRPYIPh1BAWwgInhp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991609903577-i4b5btj6qs48o6dh9rhs7gu8ouvgclej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
