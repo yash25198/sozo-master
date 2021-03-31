@@ -127,7 +127,9 @@ class Homepage extends StatelessWidget {
           IconButton(
             icon: Image.asset('assets/sos.png'),
             iconSize: 200.0,
-            onPressed: () {},
+            onPressed: () {
+              _callNumber("112");
+            },
           ),
           SizedBox(
             height: 50.0,

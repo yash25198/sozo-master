@@ -18,6 +18,26 @@ String validator(String svalue){
    }
    return svalue;
  }
+  Future<void> _createUserWithMail() async{
+    try{
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _UserName, password: _Password);
+    } on FirebaseAuthException catch(e){
+      print("error : $e");
+    }
+    catch(e){
+      print("error : $e");
+    }
+  }
+  Future<void> _loginUserWithMail() async{
+    try{
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _UserName, password: _Password);
+    } on FirebaseAuthException catch(e){
+      print("error : $e");
+    }
+    catch(e){
+      print("error : $e");
+    }
+  }
 
   Future<void> _createUser() async{
     try{
@@ -29,7 +49,8 @@ String validator(String svalue){
       print("error : $e");
     }
   }
-/*  Future<void> _createActUser() async{
+
+/* Future<void> _createActUser() async{
 
     FirebaseAuth auth = FirebaseAuth.instance;
     await auth.verifyPhoneNumber(
@@ -53,14 +74,15 @@ String validator(String svalue){
 
             // Sign the user in (or link) with the credential
             await auth.signInWithCredential(phoneAuthCredential);
-          }
+          },
           timeout: const Duration(seconds: 60),
     codeAutoRetrievalTimeout: (String verificationId) {
     // Auto-resolution timed out...
-    });
+    },
+    );
       //codeAutoRetrievalTimeout: (String verificationId) {},
-          );
-  }*/
+
+  }}*/
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +171,7 @@ String validator(String svalue){
                                     });
                                   },
                                   onSubmitted: (text){
-                                    _UserName = text;
+                                    _Password = text;
                                   },
                                 )),
 
@@ -164,7 +186,9 @@ String validator(String svalue){
                                         decoration: BoxDecoration(
                                             color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
                                         child: FlatButton(
-                                          onPressed:(){},
+                                          onPressed:(){
+                                            _loginUserWithMail();
+                                          },
 
                                           child: Text(
                                             'Login',
@@ -181,7 +205,9 @@ String validator(String svalue){
                                         decoration: BoxDecoration(
                                             color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
                                         child: FlatButton(
-                                          onPressed:(){},
+                                          onPressed:(){
+                                            _createUserWithMail();
+                                          },
 
                                           child: Text(
                                             'Sign Up',

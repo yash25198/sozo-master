@@ -5,6 +5,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sozonew/ArticleList.dart';
 import 'package:sozonew/Map.dart';
 import 'package:sozonew/loginpage.dart';
@@ -13,6 +14,7 @@ import 'user_profile.dart';
 
 
 void main() {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     MaterialApp(
 
