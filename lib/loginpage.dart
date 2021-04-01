@@ -138,10 +138,7 @@ String validator(String svalue){
                                   onChanged: (text) {
                                     setState(() {
                                       _UserName = validator(text);
-                                      //print(UserName);
-                                      //you can access nameController in its scope to get
-                                      // the value of text entered as shown below
-                                      //UserName = nameController.text;
+
                                     });
                                   },
                                   onSubmitted: (text){
@@ -158,11 +155,7 @@ String validator(String svalue){
                                       labelText: 'Password',
                                     ),
 
-                                   /* TextFormField(
-                                      obscureText: true,
-                                      decoration: const InputDecoration(
-                                        labelText: 'Password',
-                                      ),*/
+
 
 
 
@@ -170,10 +163,7 @@ String validator(String svalue){
                                       setState(() {
                                         _Password = validator(text);
 
-                                        //print(UserName);
-                                        //you can access nameController in its scope to get
-                                        // the value of text entered as shown below
-                                        //UserName = nameController.text;
+
                                       });
                                     },
                                     onSubmitted: (text){
@@ -212,7 +202,7 @@ String validator(String svalue){
                                               color: Colors.redAccent, borderRadius: BorderRadius.circular(20)),
                                           child: FlatButton(
                                             onPressed:(){
-                                              _createUserWithMail();
+                                              Navigator.pushNamed(context, '/signUpPage');
                                             },
 
                                             child: Text(

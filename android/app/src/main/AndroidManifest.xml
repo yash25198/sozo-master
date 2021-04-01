@@ -5,7 +5,7 @@
         android:label="sozonew"
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyDwPvneP_Kb65nWrMYJ8YeSu52NMp5zO9s"/>
+           android:value="AIzaSyDY0zgHd3MOSiAwNTRPYIPh1BAWwgInhp4"/>
         <activity
 
             android:name=".MainActivity"

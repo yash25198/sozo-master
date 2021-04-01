@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:sozonew/ArticleList.dart';
 import 'package:sozonew/Map.dart';
 import 'package:sozonew/loginpage.dart';
+import 'package:sozonew/signUpPage.dart';
 import 'home_page.dart';
 import 'user_profile.dart';
 
@@ -22,6 +23,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       routes: {
         '/land':(context)=>landingclass(),
+        '/signUpPage':(context)=>signUpPage(),
         '/':(context)=>loginpage(),
         '/first':(context)=>Homepage(),
         '/second':(context)=>UserProfile(),
@@ -58,7 +60,9 @@ class landingclass extends StatelessWidget {
                   User user = snapshot.data;
                   if(user == null){
                     return loginpage();
+
                   }
+
                   else{
                     return Homepage();
 
